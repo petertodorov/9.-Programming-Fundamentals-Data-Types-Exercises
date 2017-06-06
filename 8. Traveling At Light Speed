@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class TravelingAtLightSpeed
+{
+    static void Main(string[] args)
+    {
+        decimal input = decimal.Parse(Console.ReadLine());
+        decimal ly = 9450000000000M;
+        decimal speed = 300000M;
+
+        decimal totalS = (ly / speed) *input ;
+        TimeSpan result = TimeSpan.FromSeconds((double)totalS);
+        int weeks = result.Days / 7;
+        double days = result.Days% 7;
+        int hours = result.Hours;
+        int minutes = result.Minutes;
+        int seconds = result.Seconds;
+        Console.WriteLine($"{weeks} weeks\n{days} days\n{hours} hours\n{minutes} minutes\n{seconds} seconds");
+    }
+}
