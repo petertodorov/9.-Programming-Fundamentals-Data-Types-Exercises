@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class FloatOrInteger
+{
+    static void Main(string[] args)
+    {
+        decimal input = decimal.Parse(Console.ReadLine());
+        if ( input == Math.Round(input))
+        {
+            Console.WriteLine(input);
+        }
+        else
+        {
+            Console.WriteLine(Math.Round(input));
+        }
+    }
+}
