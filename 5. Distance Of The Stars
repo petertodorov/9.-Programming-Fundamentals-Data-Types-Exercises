@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class DistanceOfTheStars
+{
+    static void Main(string[] args)
+    {
+        double ly = 9450000000000D;
+        double earthNearestStar = 4.22D*ly;
+        double centerOfGalaxy = 26000D*ly;
+        double diameterMilkyWay = 100000D*ly;
+        double edgeUniverse = 46500000000D*ly;
+        string earth = earthNearestStar.ToString("0.00e+000");
+        string center = centerOfGalaxy.ToString("0.00e+000");
+        string diameter = diameterMilkyWay.ToString("0.00e+000");
+        string edge = edgeUniverse.ToString("0.00e+000");
+        Console.WriteLine($"{earth}\n{center}\n{diameter}\n{edge}");
+    }
+}
