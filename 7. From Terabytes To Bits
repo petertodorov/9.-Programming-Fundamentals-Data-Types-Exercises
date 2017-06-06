@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class FromTerabytesToBits
+{
+    static void Main(string[] args)
+    {
+        double input = double.Parse(Console.ReadLine());
+        double tb = 1024D * 1024D * 1024D * 1024D * 8D;
+        double result = input * tb;
+        Console.WriteLine(result);
+    }
+}
