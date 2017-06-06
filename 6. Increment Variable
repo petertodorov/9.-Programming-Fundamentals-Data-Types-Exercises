@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class IncrementVariable
+{
+    static void Main(string[] args)
+    {
+        int n = int.Parse(Console.ReadLine());
+        byte toIncrement = 0;
+        int counter = 0;
+        for (int i = 0; i <n; i++)
+        {
+            toIncrement++;
+         
+            if (toIncrement==0)
+            {
+                counter++;
+            }
+        }
+        Console.WriteLine(toIncrement);
+        if (counter!=0)
+        {
+            Console.WriteLine($"Overflowed {counter} times");
+        }
+
+    }
+}
