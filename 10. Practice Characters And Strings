@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class PracticeCharactersAndStrings
+{
+    static void Main(string[] args)
+    {
+        string software = "Software University";
+        char b= 'B';
+        char y = 'y';
+        char e = 'e';
+        string iLove= "I love programming";
+        Console.WriteLine($"{software}\n{b}\n{y}\n{e}\n{iLove}");
+    }
+}
