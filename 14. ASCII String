@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+class ASCIIString
+{
+    static void Main(string[] args)
+    {
+        int n = int.Parse(Console.ReadLine());
+        List<char> letter = new List<char>(); 
+        for (int i = 0; i < n; i++)
+        {
+            int temp = int.Parse(Console.ReadLine());
+            char tempLetter = Convert.ToChar(temp);
+            letter.Add(tempLetter);
+        }
+        Console.WriteLine(String.Join("",letter));
+    }
+}
