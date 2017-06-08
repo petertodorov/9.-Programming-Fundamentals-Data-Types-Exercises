@@ -16,7 +16,6 @@ class Calculator
         {
             input.Add(Console.ReadLine());
         }
-
         Console.WriteLine(String.Join(delimiter,input));
     }
 }
