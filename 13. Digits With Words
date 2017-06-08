@@ -11,7 +11,7 @@ class DigitsWithWords
     {
         string word = Console.ReadLine();
 
-        string[] ones = new string[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "nine" };
+        string[] ones = new string[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight","nine" };
         int number= new int();
         for (int i = 0; i < ones.Length; i++)
         {
