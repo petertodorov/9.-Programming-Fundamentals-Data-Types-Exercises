@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+class DataOverflow
+{
+    static void Main(string[] args)
+    {
+        ulong first = ulong.Parse(Console.ReadLine());
+        ulong second = ulong.Parse(Console.ReadLine());
+        ulong smaller = 0;
+        ulong bigger = 0;
+        string typeBigger = " ";
+        string typeSmaller = " ";
+        double overflow = 0D;
+
+        if (first < second)
+        {
+            smaller = first;
+            bigger = second;
+        }
+        else
+        {
+            smaller = second;
+            bigger = first;
+        }
+        if (bigger >= byte.MinValue && bigger <= byte.MaxValue)
+        {
+            typeBigger = "byte";
+        }
+        else if (bigger >= ushort.MinValue && bigger <= ushort.MaxValue)
+        {
+            typeBigger = "ushort";
+        }
+        else if (bigger >= uint.MinValue && bigger <= uint.MaxValue)
+        {
+            typeBigger = "uint";
+        }
+        else if (bigger >= ulong.MinValue && bigger <= ulong.MaxValue)
+        {
+            typeBigger = "uint";
+        }
+
+        if (smaller>= byte.MinValue && smaller<= byte.MaxValue)
+        {
+            typeSmaller = "byte";
+            overflow = Math.Round((double)bigger /(double) byte.MaxValue);
+
+        }
+        else if (smaller  >= ushort.MinValue && smaller <= ushort.MaxValue)
+        {
+            typeSmaller = "ushort";
+            overflow = Math.Round((double)bigger / (double)ushort.MaxValue);
+        }
+        else if (smaller >= uint.MinValue && smaller <= uint.MaxValue)
+        {
+            typeSmaller = "uint";
+            overflow = Math.Round((double)bigger / (double)uint.MaxValue);
+        }
+        else if (smaller >= ulong.MinValue && smaller<= ulong.MaxValue)
+        {
+            typeSmaller = "uint";
+            overflow = Math.Round((double)bigger / (double)ulong.MaxValue);
+        }
+        Console.WriteLine($"bigger type: {typeBigger}");
+
+        Console.WriteLine($"smaller type: {typeSmaller}");
+        Console.WriteLine($"{bigger} can overflow {typeSmaller} {overflow} times");
+    }
+}
