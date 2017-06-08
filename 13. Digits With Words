@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+class DigitsWithWords
+{
+    static void Main(string[] args)
+    {
+        string word = Console.ReadLine();
+
+        string[] ones = new string[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "nine" };
+        int number= new int();
+        for (int i = 0; i < ones.Length; i++)
+        {
+            if (ones[i] == word)
+            {
+                number= i;
+            }
+        }
+        Console.WriteLine(number);
+    }
+}
