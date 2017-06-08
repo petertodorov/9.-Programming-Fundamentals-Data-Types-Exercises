@@ -17,6 +17,6 @@ class ASCIIString
             char tempLetter = Convert.ToChar(temp);
             letter.Add(tempLetter);
         }
-        Console.WriteLine(String.Join("",letter));
+     Console.WriteLine(String.Join("",letter));
     }
 }
