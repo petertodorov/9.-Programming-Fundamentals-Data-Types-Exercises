@@ -12,6 +12,5 @@ class VariableInHexadecimalFormat
         string input = Console.ReadLine();
         decimal intValue = Convert.ToInt32(input, 16);
         Console.WriteLine(intValue);
-        
     }
 }
