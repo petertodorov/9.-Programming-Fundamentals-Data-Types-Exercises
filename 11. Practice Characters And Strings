@@ -14,5 +14,6 @@ class PracticeCharactersAndStrings
         char e = 'e';
         string iLove= "I love programming";
         Console.WriteLine($"{software}\n{b}\n{y}\n{e}\n{iLove}");
+        
     }
 }
