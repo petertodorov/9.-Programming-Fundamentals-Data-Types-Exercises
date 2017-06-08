@@ -20,7 +20,7 @@ class Calculator
         }
         else if (operatorSTR == "-")
         {
-            result = operand + secondOperand;
+            result = operand - secondOperand;
         }
         else if (operatorSTR == "*")
         {
