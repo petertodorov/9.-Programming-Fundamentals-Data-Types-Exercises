@@ -11,22 +11,14 @@ class DataOverflow
     {
         ulong first = ulong.Parse(Console.ReadLine());
         ulong second = ulong.Parse(Console.ReadLine());
-        ulong smaller = 0;
-        ulong bigger = 0;
+        
         string typeBigger = " ";
         string typeSmaller = " ";
         double overflow = 0D;
+        ulong smaller = Math.Min(first, second);
+        ulong bigger = Math.Max(first, second);
 
-        if (first < second)
-        {
-            smaller = first;
-            bigger = second;
-        }
-        else
-        {
-            smaller = second;
-            bigger = first;
-        }
+        
         if (bigger >= byte.MinValue && bigger <= byte.MaxValue)
         {
             typeBigger = "byte";
@@ -41,16 +33,16 @@ class DataOverflow
         }
         else if (bigger >= ulong.MinValue && bigger <= ulong.MaxValue)
         {
-            typeBigger = "uint";
+            typeBigger = "ulong";
         }
 
-        if (smaller>= byte.MinValue && smaller<= byte.MaxValue)
+        if (smaller >= byte.MinValue && smaller <= byte.MaxValue)
         {
             typeSmaller = "byte";
-            overflow = Math.Round((double)bigger /(double) byte.MaxValue);
+            overflow = Math.Round((double)bigger / (double)byte.MaxValue);
 
         }
-        else if (smaller  >= ushort.MinValue && smaller <= ushort.MaxValue)
+        else if (smaller >= ushort.MinValue && smaller <= ushort.MaxValue)
         {
             typeSmaller = "ushort";
             overflow = Math.Round((double)bigger / (double)ushort.MaxValue);
@@ -60,9 +52,9 @@ class DataOverflow
             typeSmaller = "uint";
             overflow = Math.Round((double)bigger / (double)uint.MaxValue);
         }
-        else if (smaller >= ulong.MinValue && smaller<= ulong.MaxValue)
+        else if (smaller >= ulong.MinValue && smaller <= ulong.MaxValue)
         {
-            typeSmaller = "uint";
+            typeSmaller = "ulong";
             overflow = Math.Round((double)bigger / (double)ulong.MaxValue);
         }
         Console.WriteLine($"bigger type: {typeBigger}");
