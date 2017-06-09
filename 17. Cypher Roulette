@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+class CypherRoulette
+{
+    static void Main(string[] args)
+    {
+
+        int n = int.Parse(Console.ReadLine());
+        string input = string.Empty;
+        List<string> result = new List<string>();
+        bool reverse = false;
+        string lastEnteredWord = String.Empty;
+        for (int i = 0; i < n; i++)
+        {
+            input = Console.ReadLine();
+            if (input == lastEnteredWord)
+            {
+                if (input == "spin")
+                {
+                    i--;
+                }
+                result = new List<string>();
+                continue;
+            }
+            lastEnteredWord = input;
+            if (input != "spin")
+            {
+                switch (reverse)
+                {
+                    case false:
+                        result.Add(input);
+                        break;
+                    case true:
+                        result.Insert(0, input);
+                        break;
+                }
+            }
+            else if (input == "spin" && reverse==false)
+            {
+                i--;
+                reverse = true;
+            }
+            else if (input == "spin" && reverse==true)
+            {
+                i--;
+                reverse = false;
+            }
+        }
+        Console.WriteLine(String.Join("", result));
+    }
+}
+
